@@ -5,7 +5,7 @@ namespace Alleg
 {
 
 BITMAP *page = NULL;
-BITMAP *outil = NULL;
+BITMAP *outil;
 char key_last;
 int mouse_click;
 int mouse_unclick;
@@ -45,9 +45,9 @@ void init()
     set_display_switch_mode(SWITCH_BACKGROUND);
 
     show_mouse(screen);
-
+    outil = create_bitmap(SCREEN_W,SCREEN_H);
     page = create_bitmap(SCREEN_W,SCREEN_H);
-
+    outil = load_bitmap("images/Outils.bmp",NULL);
     rafraichir_clavier_souris();
     effacer_page();
     afficher_page();
@@ -69,20 +69,6 @@ void afficher_page()
     blit(page, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H);
     release_screen();
 }
-
-/// sdfghjkkljhgfddghqsdfghjkuytrdcvjkiuygfvb nk,uyfcvbnk,jhgcvnjbhvgcfdfgfyfffffffffffffffffffffff
-/// dfghjklm,kjhgfddrtfgu
-
-void supprimer_sommet(graphe &a1)
-{
-    int n_sommet;
-    allegro_message("saisissez le numero du sommet a supprimer");
-    std::cin >> n_sommet;
-    a1.supprimer(n_sommet);
-}
-
-///serdihhgfxderdtfyg
-///<esrtpojhgtyguhjhvgfttttttttttttttttttttttttttttfffffffffffffffffffffffffffffffffffffffffffffffffffffft
 
 void fermer_allegro()
 {
@@ -116,9 +102,20 @@ BITMAP *charger_image(int a, std::string name)
     return image;
 
 }
+
+void supprimersommet(graphe &a1)
+{
+    int n=0;
+    allegro_message("saisissez le numero de votre sommet a supprimer");
+    std::cout << "saisissez le numero du sommet a supprimer";
+    std::cin >> n;
+    a1.supprimer(n);
+
+}
+
 void deplacer(graphe &a1)
 { int a,b;
-    BITMAP *buffer;
+
     for(int i=0; i<a1.m_ordre;i++)
         {
             if((mouse_x < a1.m_som[i].getx() + 100) && (mouse_x > a1.m_som[i].getx()) && (mouse_y < a1.m_som[i].gety() + 100) && (mouse_y > a1.m_som[i].gety()) && mouse_b == 1)
@@ -137,17 +134,21 @@ void deplacer(graphe &a1)
 
 }
 
-void affichage(graphe &a1)
+int affichage(graphe &a1)
 {
  int a,b,c,d;
+ int fin;
     effacer_page();
 
-    draw_sprite(page,outil,0,0);
+    draw_sprite(page,outil,0,0); ///Affichage de la barre d'outils
+
+    rectfill(page, 0, 650, 83, 768, makecol(150, 30, 30));///Affichage bouton retour
+    textprintf_centre_ex(page, font, 45, 675, makecol(255,255,255), -1,"retour");
     for(int i=0; i<a1.m_ordre; i++)
     {
         if( a1.m_som[i].actif == 1)
         {
-            draw_sprite(page, a1.m_som[i].S, a1.m_som[i].getx(), a1.m_som[i].gety());
+            draw_sprite(page, a1.m_som[i].S, a1.m_som[i].getx(), a1.m_som[i].gety()); ///Affichage des sommets actifs
         }
     }
         for(int j=0; j<a1.m_ar.size(); j++)
@@ -220,21 +221,20 @@ void affichage(graphe &a1)
                                     d = 0;
                                 }
                     }
-                    line(page,a1.m_som[a1.m_ar[j].m_s1].getx()+a,a1.m_som[a1.m_ar[j].m_s1].gety()+b,a1.m_som[a1.m_ar[j].m_s2].getx()+c,a1.m_som[a1.m_ar[j].m_s2].gety()+d,0XFF6347);
-                    circlefill(page,a1.m_som[a1.m_ar[j].m_s2].getx()+c,a1.m_som[a1.m_ar[j].m_s2].gety()+d,7,0XFF6347);
+                    line(page,a1.m_som[a1.m_ar[j].m_s1].getx()+a,a1.m_som[a1.m_ar[j].m_s1].gety()+b,a1.m_som[a1.m_ar[j].m_s2].getx()+c,a1.m_som[a1.m_ar[j].m_s2].gety()+d,0XFF6347);///Affichage des aretes
+                    circlefill(page,a1.m_som[a1.m_ar[j].m_s2].getx()+c,a1.m_som[a1.m_ar[j].m_s2].gety()+d,7,0XFF6347);///Affichage des cercle
             }
         }
         deplacer(a1);
     afficher_page();
-
-
+    ajout(a1);
     if(mouse_x>0 && mouse_x<85 && mouse_y>0 && mouse_y<174 && mouse_b&1)
-            {
-              supprimer_sommet(a1);
-            }
+    {
+        supprimersommet(a1);
+    }
 
-
-
+    fin = retour();
+    return fin;
 
 }
 
@@ -332,7 +332,7 @@ int menu()
             if(mouse_x>462 && mouse_x<562 && mouse_y>600 && mouse_y<650 && mouse_b&1)
             {
                 test_acc=-1;
-                a=32;
+                a=-1;
             }
 
             masked_blit(rick,bmp,0,0,840,460,SCREEN_W,SCREEN_H);
@@ -438,6 +438,28 @@ int menu()
     return a;
 }
 
+int retour()
+{
+int a;
+if(mouse_x < 83 && mouse_y > 660 && mouse_b ==1)
+    {
+        a = 1;
+    }
+else a = 0;
+return a;
+}
+
+void ajout(graphe &a1)
+{
+    int n_sommet;
+    if (mouse_x>0 && mouse_x<85 && mouse_y>175 && mouse_y<345 && mouse_b&1)
+    {
+        allegro_message("saisissz le numero du sommet à ajouter sur la console");
+        std::cout<<"saisissz le numero du sommet a ajouter"<<std::endl;
+        std::cin>>n_sommet;
+        a1.ajouter(n_sommet);
+    }
+}
 }
 
 

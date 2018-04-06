@@ -24,6 +24,7 @@ public :
     void affichage();
     void save(int a);
     void supprimer(int sommet);
+    void ajouter(int n);
 
 
 };

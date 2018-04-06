@@ -6,16 +6,25 @@ using namespace std;
 
 int main()
 {
-    int choix;
+    int choix = 0;
+    int b;
     Alleg::init();
-    choix = Alleg::menu();
-    graphe ou(choix);
-    while(!key[KEY_ESC])
+    while( choix != -1)
+    {
+        b = 0;
+        choix = Alleg::menu();
+        if(choix != -1)
         {
-            Alleg::affichage(ou);
+            graphe ou(choix);
+            while(b == 0)
+                {
+                    b = Alleg::affichage(ou);
+                }
+            ou.save(choix);
         }
-Alleg::fermer_allegro();
-    ou.save(choix);
+    }
+    Alleg::fermer_allegro();
+
     return 0;
 }
 END_OF_MAIN();

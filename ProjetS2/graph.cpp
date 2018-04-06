@@ -103,3 +103,12 @@ void graphe::supprimer(int sommet)
 {
     m_som[sommet].actif = 0;
 }
+
+void graphe::ajouter(int n)
+{
+    if (m_som[n].actif==1)
+    {
+        allegro_message("on ne peut pas ajouter ce sommet. Il est déjà présent sur le graphe.");
+    }
+    else m_som[n].actif = 1;
+}

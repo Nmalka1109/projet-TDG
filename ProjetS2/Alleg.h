@@ -82,7 +82,7 @@ void fermer_allegro();
 
 BITMAP *charger_image(int a, std::string name);
 
-void affichage(graphe &a1);
+int affichage(graphe &a1);
 
 void rafraichir_clavier_souris();
 
@@ -90,7 +90,11 @@ void deplacer(graphe &a1);
 
 int menu();
 
-void barreoutil();
+int retour();
+
+void ajout(graphe &a1);
+
+void supprimersommet(graphe &a1);
 }
 
 
