@@ -10,6 +10,7 @@ BITMAP *dino;
 BITMAP *espace;
 BITMAP *bambou;
 BITMAP *ocean;
+BITMAP *souris;
 char key_last;
 int mouse_click;
 int mouse_unclick;
@@ -48,7 +49,7 @@ void init()
     }
     set_display_switch_mode(SWITCH_BACKGROUND);
 
-    show_mouse(screen);
+    //show_mouse(screen);
     outil = create_bitmap(SCREEN_W,SCREEN_H);
     page = create_bitmap(SCREEN_W,SCREEN_H);
     outil = load_bitmap("images/Outils.bmp",NULL);
@@ -56,6 +57,7 @@ void init()
     espace = load_bitmap("images/espace.bmp",NULL);
     dino = load_bitmap("images/dino.bmp",NULL);
     bambou = load_bitmap("images/bambou.bmp",NULL);
+    souris = load_bitmap("images/souris.bmp",NULL);
     rafraichir_clavier_souris();
     effacer_page();
     afficher_page();
@@ -74,6 +76,8 @@ void afficher_page()
     if (!page)
         return;
     acquire_screen();
+
+    masked_blit(souris,page,0,0,mouse_x+7,mouse_y+7,SCREEN_W,SCREEN_H);
     blit(page, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H);
     release_screen();
 }
@@ -108,6 +112,19 @@ void ma(graphe &a1)
 
 void simulation(graphe &a1)
 {
+
+
+}
+
+void connexite(graphe &a1)
+{
+    int s;
+    allegro_message("saisissez le numéro du sommet de départ");
+    std::cout<<"saisissez le numero du sommet de départ"<<std::endl;
+    std::cin>>s;
+
+    ///Comment lire un vect<vect<int>>? et de quelle manière l'afficher?
+    a1.CFCS(s);
 
 }
 
@@ -307,6 +324,12 @@ std::string n;
     {
        simulation(a1);
     }
+    ///si on clique sur connexité
+     if(mouse_x>0 && mouse_x<85 && mouse_y>396 && mouse_y<429 && mouse_b&1)
+    {
+       connexite(a1);
+    }
+
 
 
     fin = retour();

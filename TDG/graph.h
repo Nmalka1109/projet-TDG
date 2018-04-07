@@ -27,6 +27,8 @@ public :
     void ajouter(int n);
     void modif_sommet(int ps, int i);
     void modif_arete(int pa, int i, int j);
+    std::vector<int> RechercheCFC(int s);
+    std::vector<std::vector<int>> CFCS(int s);
 
 
 };

@@ -14,11 +14,12 @@ class Sommet
         int degre;
         int getx();
         int gety();
+        int ind;
         void setx(int x1);
         void sety(int y1);
 
         ///constructeurs
-        Sommet(int posx, int posy,BITMAP *som,int a,int d,int poids);
+        Sommet(int posx, int posy,BITMAP *som,int a,int d,int poids, int ind);
 
         ///destructeur
         ~Sommet();

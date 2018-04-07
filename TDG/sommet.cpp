@@ -3,7 +3,7 @@ using namespace std;
 
 
 
-Sommet::Sommet(int posx, int posy,BITMAP *som,int a,int d,int ps)
+Sommet::Sommet(int posx, int posy,BITMAP *som,int a,int d,int ps,int l)
 {
     actif = a;
     x = posx;
@@ -11,6 +11,7 @@ Sommet::Sommet(int posx, int posy,BITMAP *som,int a,int d,int ps)
     S = som;
     poids = ps;
     degre = d;
+    ind=l;
 }
 
 int Sommet::getx()
