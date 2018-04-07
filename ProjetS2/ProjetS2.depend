@@ -1,0 +1,165 @@
+# depslib dependency file v1.0
+1522949522 source:c:\users\grégoire\desktop\ing2\info\projets2\main.cpp
+	<iostream>
+	<allegro.h>
+	"Alleg.h"
+	"graph.h"
+
+1522950649 source:c:\users\grégoire\desktop\ing2\info\projets2\alleg.cpp
+	"Alleg.h"
+	"graph.h"
+
+1522949572 c:\users\grégoire\desktop\ing2\info\projets2\alleg.h
+	<allegro.h>
+	<iostream>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+	"sommet.h"
+	"graph.h"
+	"coords.h"
+
+1522836862 source:c:\users\grégoire\desktop\ing2\info\projets2\arrete.cpp
+	"arrete.h"
+	"sommet.h"
+
+1522836791 c:\users\grégoire\desktop\ing2\info\projets2\arrete.h
+	"Sommet.h"
+
+1522943812 c:\users\grégoire\desktop\ing2\info\projets2\sommet.h
+	<iostream>
+	<vector>
+	<allegro.h>
+
+1522944445 source:c:\users\grégoire\desktop\ing2\info\projets2\sommet.cpp
+	"Sommet.h"
+
+1522950618 source:c:\users\grégoire\desktop\ing2\info\projets2\graph.cpp
+	"graph.h"
+	"Alleg.h"
+	<iostream>
+	<fstream>
+
+1522950630 c:\users\grégoire\desktop\ing2\info\projets2\graph.h
+	<vector>
+	"Sommet.h"
+	"arrete.h"
+
+1522840977 source:c:\users\grégoire\desktop\ing2\info\projets2\coords.cpp
+	"coords.h"
+
+1522841010 c:\users\grégoire\desktop\ing2\info\projets2\coords.h
+	<cmath>
+
+1522854577 c:\users\grégoire\desktop\ing2\info\projets2\widget.h
+	"Alleg.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1522836864 source:d:\ing 2\info\codeblock\s2\projets2\arrete.cpp
+	"arrete.h"
+	"sommet.h"
+
+1522836792 d:\ing 2\info\codeblock\s2\projets2\arrete.h
+	"Sommet.h"
+
+1522943814 d:\ing 2\info\codeblock\s2\projets2\sommet.h
+	<iostream>
+	<vector>
+	<allegro.h>
+
+1522840978 source:d:\ing 2\info\codeblock\s2\projets2\coords.cpp
+	"coords.h"
+
+1522841012 d:\ing 2\info\codeblock\s2\projets2\coords.h
+	<cmath>
+
+1523028249 source:d:\ing 2\info\codeblock\s2\projets2\alleg.cpp
+	"Alleg.h"
+	"graph.h"
+
+1523028013 d:\ing 2\info\codeblock\s2\projets2\alleg.h
+	<allegro.h>
+	<iostream>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+	"sommet.h"
+	"graph.h"
+	"coords.h"
+
+1522950632 d:\ing 2\info\codeblock\s2\projets2\graph.h
+	<vector>
+	"Sommet.h"
+	"arrete.h"
+
+1522950620 source:d:\ing 2\info\codeblock\s2\projets2\graph.cpp
+	"graph.h"
+	"Alleg.h"
+	<iostream>
+	<fstream>
+
+1523027988 source:d:\ing 2\info\codeblock\s2\projets2\main.cpp
+	<iostream>
+	<allegro.h>
+	"Alleg.h"
+	"graph.h"
+
+1522944446 source:d:\ing 2\info\codeblock\s2\projets2\sommet.cpp
+	"Sommet.h"
+
+1523090710 source:c:\users\nmalk\desktop\code block\projets2\alleg.cpp
+	"Alleg.h"
+	"graph.h"
+
+1523052203 c:\users\nmalk\desktop\code block\projets2\alleg.h
+	<allegro.h>
+	<iostream>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+	"sommet.h"
+	"graph.h"
+	"coords.h"
+
+1523090532 c:\users\nmalk\desktop\code block\projets2\sommet.h
+	<iostream>
+	<vector>
+	<allegro.h>
+
+1523052444 c:\users\nmalk\desktop\code block\projets2\graph.h
+	<vector>
+	"Sommet.h"
+	"arrete.h"
+
+1523038070 c:\users\nmalk\desktop\code block\projets2\arrete.h
+	"Sommet.h"
+
+1523032233 c:\users\nmalk\desktop\code block\projets2\coords.h
+	<cmath>
+
+1523038070 source:c:\users\nmalk\desktop\code block\projets2\arrete.cpp
+	"arrete.h"
+	"sommet.h"
+
+1523032233 source:c:\users\nmalk\desktop\code block\projets2\coords.cpp
+	"coords.h"
+
+1523089358 source:c:\users\nmalk\desktop\code block\projets2\graph.cpp
+	"graph.h"
+	"Alleg.h"
+	<iostream>
+	<fstream>
+
+1523032233 source:c:\users\nmalk\desktop\code block\projets2\main.cpp
+	<iostream>
+	<allegro.h>
+	"Alleg.h"
+	"graph.h"
+
+1523090692 source:c:\users\nmalk\desktop\code block\projets2\sommet.cpp
+	"Sommet.h"
+
