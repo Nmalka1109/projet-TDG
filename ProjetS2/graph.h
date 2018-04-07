@@ -25,6 +25,7 @@ public :
     void save(int a);
     void supprimer(int sommet);
     void ajouter(int n);
+    void modif_sommet(int ps, int i);
 
 
 };

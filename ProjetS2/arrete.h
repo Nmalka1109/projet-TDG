@@ -9,10 +9,11 @@ class Arete
         ///attributs
        int  m_s1;
        int m_s2;
+       int m_pa;
 
         ///constructeurs
         Arete();
-        Arete(int ps1,int ps2);
+        Arete(int ps1,int ps2, int pa);
 
         ///destructeur
         ~Arete();

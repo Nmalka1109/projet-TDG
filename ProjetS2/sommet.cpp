@@ -3,13 +3,13 @@ using namespace std;
 
 
 
-Sommet::Sommet(int posx, int posy,BITMAP *som,int a,int d)
+Sommet::Sommet(int posx, int posy,BITMAP *som,int a,int d,int ps)
 {
     actif = a;
     x = posx;
     y = posy;
     S = som;
-    poids = 0;
+    poids = ps;
     degre = d;
 }
 
@@ -24,8 +24,8 @@ int Sommet::gety()
 }
 void Sommet::setx(int x1)
 {
-    if(x1 > 900) x1 = 850;
-    if(x1 < 185) x1 = 155;
+    if(x1 > 900) x1 = 880;
+    if(x1 < 100) x1 = 90;
     x = x1;
 }
 
@@ -39,3 +39,6 @@ Sommet::~Sommet()
 {
     //dtor
 }
+
+
+

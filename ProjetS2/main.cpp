@@ -8,6 +8,7 @@ int main()
 {
     int choix = 0;
     int b;
+
     Alleg::init();
     while( choix != -1)
     {
@@ -18,7 +19,7 @@ int main()
             graphe ou(choix);
             while(b == 0)
                 {
-                    b = Alleg::affichage(ou);
+                    b = Alleg::affichage(ou,choix);
                 }
             ou.save(choix);
         }

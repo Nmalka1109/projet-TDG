@@ -11,7 +11,7 @@ using namespace std;
 graphe::graphe(int a)
 {
     BITMAP *im = NULL;
-    int x,y,j,act;
+    int x,y,j,act,pa,ps;
     string name;
     string loc;
     int b;
@@ -31,6 +31,7 @@ graphe::graphe(int a)
         {
             fic1 >>act;
             fic1 >>loc;
+            fic1 >>ps;
             fic1 >>x;
             fic1 >>y;
             fic1 >>j;
@@ -39,11 +40,13 @@ graphe::graphe(int a)
                 for(int f=0; f<j ; f++ )
                 {
                     fic1 >> b;
-                    m_ar.push_back(Arete(i,b));
+                   // fic1 >>pa;
+                    m_ar.push_back(Arete(i,b,pa));
+
                 }
             }
             im = Alleg::charger_image(a,loc);
-            m_som.push_back(Sommet(x,y,im,act,j));
+            m_som.push_back(Sommet(x,y,im,act,j,ps));
 
         }
     if(!fic1) std::cout <<"pas de fichier";
@@ -57,7 +60,7 @@ graphe::~graphe()
 void graphe::save(int a)
 {
 string name;
-int j = 0;
+int j = 0, pa,ps;
 if (a == 1)
         name = "Dinosaures.txt";
     else if (a == 2)
@@ -80,6 +83,8 @@ if (a == 1)
                 {
                     file << m_som[i].actif<<endl;
                     file << i<< endl;
+                    file << m_som[i].poids<< endl;
+                    //file << pa<< endl;
                     file << m_som[i].getx()<<" ";
                     file << m_som[i].gety()<<endl;
                     file << m_som[i].degre;
@@ -112,3 +117,15 @@ void graphe::ajouter(int n)
     }
     else m_som[n].actif = 1;
 }
+
+void graphe::modif_sommet(int ps,int i)
+{
+    if(m_som[i].actif==0)
+    {
+        allegro_message("on ne peut pas modifier ce sommet. Il 'est pas présent sur le graphe");
+    }
+    else m_som[i].poids=ps;
+}
+
+
+
