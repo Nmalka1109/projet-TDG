@@ -101,6 +101,8 @@ void ms(graphe &a1);
 void ma(graphe &a1);
 
 void afficher_sommet();
+
+void Duree(graphe &a1);
 }
 
 

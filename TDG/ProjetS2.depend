@@ -215,3 +215,55 @@
 1523137000 source:d:\ing 2\info\codeblock\s2\tdg\sommet.cpp
 	"Sommet.h"
 
+1523202803 source:c:\users\lro\projet-tdg\tdg\arrete.cpp
+	"arrete.h"
+	"sommet.h"
+
+1523202803 c:\users\lro\projet-tdg\tdg\arrete.h
+	"Sommet.h"
+
+1523205254 c:\users\lro\projet-tdg\tdg\sommet.h
+	<iostream>
+	<vector>
+	<allegro.h>
+
+1523032234 source:c:\users\lro\projet-tdg\tdg\coords.cpp
+	"coords.h"
+
+1523032234 c:\users\lro\projet-tdg\tdg\coords.h
+	<cmath>
+
+1523203842 source:c:\users\lro\projet-tdg\tdg\graph.cpp
+	"graph.h"
+	"Alleg.h"
+	<iostream>
+	<fstream>
+
+1523203842 c:\users\lro\projet-tdg\tdg\graph.h
+	<vector>
+	"Sommet.h"
+	"arrete.h"
+
+1523203842 c:\users\lro\projet-tdg\tdg\alleg.h
+	<allegro.h>
+	<iostream>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+	"sommet.h"
+	"graph.h"
+	"coords.h"
+
+1523205254 source:c:\users\lro\projet-tdg\tdg\main.cpp
+	<iostream>
+	<allegro.h>
+	"Alleg.h"
+	"graph.h"
+
+1523205254 source:c:\users\lro\projet-tdg\tdg\sommet.cpp
+	"Sommet.h"
+
+1523211906 source:c:\users\lro\projet-tdg\tdg\alleg.cpp
+	"Alleg.h"
+	"graph.h"
+

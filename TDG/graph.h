@@ -29,6 +29,11 @@ public :
     void modif_arete(int pa, int i, int j);
     std::vector<int> RechercheCFC(int s);
     std::vector<std::vector<int>> CFCS(int s);
+    void settemps(int t);
+    int gettemps();
+
+    private:
+    int tps;
 
 
 };

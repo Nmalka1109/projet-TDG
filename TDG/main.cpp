@@ -21,7 +21,7 @@ int main()
                 {
                     b = Alleg::affichage(ou,choix);
                 }
-            ou.save(choix);
+            //ou.save(choix);
         }
     }
     Alleg::fermer_allegro();

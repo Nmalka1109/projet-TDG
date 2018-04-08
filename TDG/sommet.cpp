@@ -3,15 +3,17 @@ using namespace std;
 
 
 
-Sommet::Sommet(int posx, int posy,BITMAP *som,int a,int d,int ps,int l)
+Sommet::Sommet(int posx, int posy,BITMAP *som,int a,int d,int ps,int l,float r)
 {
     actif = a;
     x = posx;
     y = posy;
     S = som;
     poids = ps;
+    p_sim=ps;
     degre = d;
     ind=l;
+    rythme=r;
 }
 
 int Sommet::getx()

@@ -11,7 +11,9 @@ using namespace std;
 graphe::graphe(int a)
 {
     BITMAP *im = NULL;
-    int x,y,j,act,pa,ps,ind;
+    tps = 0;
+    int x,y,j,act,ps,ind,pa;
+    float r;
     string name;
     string loc;
     int b;
@@ -34,6 +36,7 @@ graphe::graphe(int a)
         fic1 >>loc;
         fic1 >>ind;
         fic1 >>ps;
+        fic1 >>r;
         fic1 >>x;
         fic1 >>y;
         fic1 >>j;
@@ -48,7 +51,7 @@ graphe::graphe(int a)
             }
         }
         im = Alleg::charger_image(a,loc);
-        m_som.push_back(Sommet(x,y,im,act,j,ps,ind));
+        m_som.push_back(Sommet(x,y,im,act,j,ps,ind,r));
 
     }
     if(!fic1)
@@ -88,7 +91,8 @@ void graphe::save(int a)
             file << m_som[i].actif<<endl;
             file << i<< endl;
             file << i<< endl;
-            file << m_som[i].poids<< endl;
+            file << m_som[i].poids<< " ";
+            file <<m_som[i].rythme<<endl;
             file << m_som[i].getx()<<" ";
             file << m_som[i].gety()<<endl;
             file << m_som[i].degre;
@@ -360,3 +364,14 @@ std::vector <std::vector<int> > graphe::CFCS(int s)
    return tabc;
 }
 
+int graphe::gettemps()
+{
+    return tps;
+}
+
+void graphe::settemps(int t)
+{
+    if(t>300) t = 300;
+    if (t<0) t = 0;
+    tps = t;
+}

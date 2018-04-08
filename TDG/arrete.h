@@ -13,7 +13,7 @@ class Arete
 
         ///constructeurs
         Arete();
-        Arete(int ps1,int ps2, int pa);
+        Arete(int ps1,int ps2,int pa);
 
         ///destructeur
         ~Arete();
